@@ -40,12 +40,15 @@ export default function App() {
   //Updating the google sheets with the new data
   const handleExcelSubmission = async () => {
     try {
-      const response = await fetch("http://localhost:2000/api/update-sheets", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const response = await fetch(
+        "https://form-app-backend-95ta.onrender.com/api/update-sheets",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
         },
-      });
+      );
       const data = await response.json();
     } catch (error) {
       console.error("Error:", error);
@@ -65,18 +68,21 @@ export default function App() {
       setIsSubmitting(true);
       try {
         const cleanPhoneNumber = phoneNumber.replace(/^\d+-/, "");
-        const response = await fetch("http://localhost:2000/api/submit-form", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
+        const response = await fetch(
+          "https://form-app-backend-95ta.onrender.com/api/submit-form",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              formType,
+              name,
+              countryCode,
+              phoneNumber: cleanPhoneNumber,
+            }),
           },
-          body: JSON.stringify({
-            formType,
-            name,
-            countryCode,
-            phoneNumber: cleanPhoneNumber,
-          }),
-        });
+        );
         const data = await response.json();
         if (response.ok) {
           setName("");
