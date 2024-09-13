@@ -137,7 +137,11 @@ export default function App() {
                 )}
               </div>
               <Button type="submit" className="w-full" disabled={isSubmitting}>
-                {isSubmitting ? <Loader2 className="w-6 h-6 mr-2" /> : "Submit"}
+                {isSubmitting ? (
+                  <Loader2 className="w-6 h-6 mr-2 animate-spin" />
+                ) : (
+                  "Submit"
+                )}
               </Button>
             </form>
           </CardContent>

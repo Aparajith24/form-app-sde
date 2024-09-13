@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dynamic Forms Application
 
-## Getting Started
+## Overview
 
-First, run the development server:
+This web application demonstrates a dynamic form interface using Next.js for the frontend, Node.js for the backend, and PostgreSQL for the database. Users can interact with two types of forms, each with validation rules and functionality to synchronize data with an online Excel sheet.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Dynamic Form Selection**: Two buttons ("Form A" and "Form B") allow users to select between two forms.
+- **Form Validation**: Ensures the following:
+  - Name field is non-empty and contains only alphabetic characters.
+  - Country code is selected from a predefined list.
+  - Phone number is numeric and conforms to the format specified by the selected country code.
+- **Database Integration**: Data from the forms are stored in a PostgreSQL database.
+- **Data Synchronization**: Automatically updates an online Excel sheet with the form data.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Technologies
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Frontend**: Next.js (React)
+- **Backend**: Node.js (Express)
+- **Database**: PostgreSQL
+- **Data Synchronization**: Integration with an online Excel sheet
 
-## Learn More
+## Setup
 
-To learn more about Next.js, take a look at the following resources:
+### Prerequisites
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Node.js and npm installed
+- PostgreSQL installed and running
+- Online Excel sheet setup for data synchronization
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Installation
 
-## Deploy on Vercel
+1. **Clone the repository:**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+    ```bash
+    git clone https://github.com/Aparajith24/form-app-sde.git
+    cd form-app-sde
+    ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+2. **Install dependencies:**
+
+    ```bash
+    npm install
+    ```
+
+5. **Run the application:**
+
+    ```bash
+    npm run dev
+    ```
+
+    The application will be available at `http://localhost:3000`.
+
+## Usage
+
+1. **Navigate to `http://localhost:3000` in your browser.**
+2. **Click on "Form A" or "Form B" to display the respective form.**
+3. **Fill out the form fields and submit.**
