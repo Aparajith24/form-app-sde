@@ -4,6 +4,11 @@
 
 This web application demonstrates a dynamic form interface using Next.js for the frontend, Node.js for the backend, and PostgreSQL for the database. Users can interact with two types of forms, each with validation rules and functionality to synchronize data with an online Excel sheet.
 
+## Links
+
+Google Sheets: https://docs.google.com/spreadsheets/d/1xKt69AUJI3FYW_sCpTFLD29T4Ust7itlUCVD8poDDHU/edit?gid=0#gid=0
+Hosted App:
+
 ## Features
 
 - **Dynamic Form Selection**: Two buttons ("Form A" and "Form B") allow users to select between two forms.

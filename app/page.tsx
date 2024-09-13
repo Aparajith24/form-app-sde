@@ -37,6 +37,27 @@ export default function App() {
     return Object.keys(newErrors).length === 0;
   };
 
+  //Updating the google sheets with the new data
+  const handleExcelSubmission = async () => {
+    try {
+      const response = await fetch("http://localhost:2000/api/update-sheets", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      const data = await response.json();
+    } catch (error) {
+      console.error("Error:", error);
+      toast({
+        title: "Network error",
+        description: "Please check your connection and try again.",
+        duration: 5000,
+        className: "bg-red-500 text-white",
+      });
+    }
+  };
+
   //Submitting the form to our server
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -62,7 +83,7 @@ export default function App() {
           setCountryCode("");
           setPhoneNumber("");
           toast({
-            title: "Form submitted successfully!",
+            title: "Form submitted successfully and google sheets updated!",
             duration: 1000,
             className: "bg-green-500 text-white",
           });
@@ -74,6 +95,7 @@ export default function App() {
             className: "bg-red-500 text-white",
           });
         }
+        handleExcelSubmission();
       } catch (error) {
         console.error("Error:", error);
         toast({
