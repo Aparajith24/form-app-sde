@@ -31,20 +31,30 @@ This web application demonstrates a dynamic form interface using Next.js for the
 
 ### Installation
 
-1. **Clone the repository:**
+1. **For local installation clone backend repo and install:**
+
+      ```bash
+      git clone https://github.com/Aparajith24/form-app-backend
+      cd form-app-backend
+      npm install
+      node index.js
+        ```
+    Check the README.md file in the backend repo for more details.
+
+2. **Clone the repository:**
 
     ```bash
     git clone https://github.com/Aparajith24/form-app-sde.git
     cd form-app-sde
     ```
 
-2. **Install dependencies:**
+3. **Install dependencies:**
 
     ```bash
     npm install
     ```
 
-5. **Run the application:**
+4. **Run the application:**
 
     ```bash
     npm run dev
